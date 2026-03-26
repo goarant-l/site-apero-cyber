@@ -1,25 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
 
 </head>
+
+<?php
+session_save_path(__DIR__ . '/tmp');
+session_start();
+if (isset($_SESSION['user'])) {
+  $connecte = true;
+} else {
+  $connecte = false;
+}
+?>
+
+
 <body>
-<nav style="text-align: center;" class="p-3 shadow-lg">
+  <nav style="text-align: center;" class="p-3 shadow-lg">
 
-      <h1 class="p-3 m-4 ">Epicycle</h1>
-      <a class="btn btn-dark m-4 shadow-lg" href="#" role="button">Accueil</a>
-      <a class="btn btn-dark m-4 shadow-lg" href="./index.php" role="button">Produit</a>
-      <a class="btn btn-dark m-4 shadow-lg" href="./connexion.php" role="button">Contact</a>
-      <a class="btn btn-dark m-4 shadow-lg" href="./admin.php" role="button">Administration</a>
+    <h1 class="p-3 m-4 ">Epicycle</h1>
+    <a class="btn btn-dark m-4 shadow-lg" href="index.php?page=accueil" role="button">Accueil</a>
+    <a class="btn btn-dark m-4 shadow-lg" href="index.php?page=accueil" role="button">Produit</a>
+    <a class="btn btn-dark m-4 shadow-lg" href="index.php?page=contact" role="button">Contact</a>
+    <a class="btn btn-dark m-4 shadow-lg" href="index.php?page=connexion" role="button">Administration</a>
 
-    </nav>
+    <?php if ($connecte) { ?>
+      <form action="deconnexion.php" method="post" class="m-4">
+        <button type="submit" class="btn btn-dark m-1 shadow-lg">
+          <h5>Déconnexion</h5>
+        </button>
+      </form>
+    <?php } else { ?>
+      <a href="index.php?page=connexion_choix" class="m-4">
+        <button type="button" class="btn btn-dark m-1 shadow-lg">
+          <h5>Connexion</h5>
+        </button>
+      </a>
+    <?php } ?>
+
+
+
+
+  </nav>

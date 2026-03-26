@@ -1,6 +1,5 @@
-
 <footer class="text-center py-3">
-    © 2025 Epicycle 
+    © 2025 Epicycle
     <i class="bi bi-instagram"></i>
     <i class="bi bi-linkedin"></i>
     <i class="bi bi-steam"></i>
