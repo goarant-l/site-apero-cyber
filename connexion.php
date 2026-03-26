@@ -1,30 +1,32 @@
-<div class="container text-center pt-3 mt-6 w-50">
-    <h2>CONNEXION à la partie "UTILISATEUR"</h2>
+<div class="form-page">
+  <div class="form-card">
+    <h2><i class="bi bi-shield-lock"></i> Administration <span class="accent">Apér'o</span></h2>
+
     <form action="connexion_exe.php" method="POST">
-        <label for="login">Login :</label><br>
-        <input type="text" id="login" name="login"><br><br>
-        <label for="password">Mot de passe :</label><br>
-        <input type="password" id="mdp" name="mdp"><br>
-        <div id="messageErreur" class="erreur"></div><br>
-        <button type="submit" class="btn btn-primary">Se connecter</button><br>
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" id="login" name="login" placeholder="votre_login" required>
+      </div>
+      <div class="form-group">
+        <label for="mdp">Mot de passe</label>
+        <input type="password" id="mdp" name="mdp" placeholder="••••••••" required>
+      </div>
+      <div id="messageErreur" class="erreur"></div>
+      <button type="submit" class="btn-apero">
+        <i class="bi bi-box-arrow-in-right"></i> Se connecter
+      </button>
     </form>
+  </div>
 </div>
 
-<?php
-if (isset($_GET["erreur"])) {
-    $erreur = $_GET["erreur"];
-    ?>
-    <div class="mt-2 p-3 w-75 mx-auto alert alert-danger" role="alert">
-        <?php echo $erreur ?>
-    </div>
-    <?php
-}
-if (isset($_GET["info"])) {
-    $info = $_GET["info"];
-    ?>
-    <div class="mt-2 p-3 w-75 mx-auto alert alert-success" role="alert">
-        <h2><?php echo $info ?></h2>
-    </div>
-    <?php
-}
-?>
+<?php if (isset($_GET['erreur'])): ?>
+  <div class="alerte alerte-danger">
+    <?php echo htmlspecialchars($_GET['erreur']); ?>
+  </div>
+<?php endif; ?>
+
+<?php if (isset($_GET['info'])): ?>
+  <div class="alerte alerte-success">
+    <?php echo htmlspecialchars($_GET['info']); ?>
+  </div>
+<?php endif; ?>

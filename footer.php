@@ -1,19 +1,15 @@
-<footer class="text-center py-3">
-    © 2025 Epicycle
+<footer class="footer-apero">
+  <div class="brand-foot">Apér'o</div>
+  <div style="margin-top:.3rem;">L'élégance sans la prétention — Pont-de-Buis, Bretagne</div>
+  <div class="icons">
     <i class="bi bi-instagram"></i>
-    <i class="bi bi-linkedin"></i>
-    <i class="bi bi-steam"></i>
-    <i class="bi bi-xbox"></i>
-    <i class="bi bi-twitch"></i>
+    <i class="bi bi-facebook"></i>
     <i class="bi bi-twitter-x"></i>
-    <i class="bi bi-paypal"></i>
-    <i class="bi bi-stripe"></i>
-    <i class="bi bi-alipay"></i>
-    <i class="bi bi-nintendo-switch"></i>
-    <i class="bi bi-snapchat"></i>
-    <i class="bi bi-spotify"></i>
-    <i class="bi bi-bluetooth"></i>
+    <i class="bi bi-linkedin"></i>
+    <i class="bi bi-youtube"></i>
+  </div>
+  <div style="margin-top:.6rem;font-size:.78rem;opacity:.7;">© 2026 Apér'o — Tous droits réservés</div>
 </footer>
-</body>
 
+</body>
 </html>

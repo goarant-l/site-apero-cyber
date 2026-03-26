@@ -1,47 +1,48 @@
-<div class="container">
+<?php require "./info.BDD.php"; ?>
+
+<!-- Message de bienvenue après connexion client -->
+<?php if (isset($_GET['info'])): ?>
+  <div class="alerte alerte-success" style="margin:1rem auto;max-width:600px;">
+    <?php echo htmlspecialchars($_GET['info']); ?>
+  </div>
+<?php endif; ?>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Apér'o</h1>
+  <p>Bières artisanales &amp; produits du terroir — l'art de l'apéritif à la française</p>
+</div>
+
+<!-- Grille produits -->
+<div class="products-section">
+  <h2 style="border-bottom:3px solid #F4A424;padding-bottom:.4rem;">Nos produits</h2>
 
   <?php
-
-  require "./info.BDD.php";
-
-
-  $requeteSQL = "SELECT numProduit ,nomProduit, descriptif, prixUnitaire, nomImage FROM produit";
-  // Exécution de la requête
+  $requeteSQL = "SELECT numProduit, nomProduit, descriptif, prixUnitaire, nomImage FROM produit";
   $reponse = $pdo->query($requeteSQL);
-  $liste_produit = $reponse->fetchall(PDO::FETCH_ASSOC); ?>
+  $liste_produit = $reponse->fetchAll(PDO::FETCH_ASSOC);
+  ?>
 
-  <h1 class="p-3 m-5 text-center">
-    Le site d'occasion de modèles haut de gamme
-  </h1>
-
-  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3">
-    <?php foreach ($liste_produit as $produit) { ?>
-      <div class="col">
-        <div class="card h-100">
-          <img src="/images/<?php echo $produit['nomImage'] ?>" class="card-img-top"
-            alt="<?php echo $produit['nomProduit'] ?>">
-          <div class="card-body">
-            <p class="card-text"><?php echo $produit['descriptif'] ?></p>
-            <a href="#">
-              <div class="text-white p-2" style="background-color: #5a94a1;">
-                <h6 class="card-title"><?php echo $produit['nomProduit'] ?></h6>
-              </div>
-            </a>
-          </div>
-          <div class="card-footer">
-            <small class="text-body-secondary"><?php echo $produit['prixUnitaire'] ?>€</small>
-          </div>
+  <div class="products-grid">
+    <?php foreach ($liste_produit as $produit): ?>
+      <div class="card-produit">
+        <img src="/images/<?php echo htmlspecialchars($produit['nomImage']); ?>"
+             alt="<?php echo htmlspecialchars($produit['nomProduit']); ?>">
+        <div class="card-body">
+          <h3 class="card-title"><?php echo htmlspecialchars($produit['nomProduit']); ?></h3>
+          <p class="card-desc"><?php echo htmlspecialchars($produit['descriptif']); ?></p>
+        </div>
+        <div class="card-footer">
+          <?php echo number_format($produit['prixUnitaire'], 2, ',', ' '); ?> €
         </div>
       </div>
-    <?php } ?>
-
+    <?php endforeach; ?>
   </div>
 </div>
 
-
-<div class="d-grid gap-2 mx-auto col-2 d-block mt-5">
-  <a class="btn btn-dark m-4 shadow-lg" href="#" role="button"><i class="bi bi-cart"></i> Mon Panier </a>
+<!-- Panier -->
+<div class="panier-wrapper">
+  <a href="#" class="btn-apero">
+    <i class="bi bi-cart3"></i>&nbsp; Mon panier
+  </a>
 </div>
-
-
-
