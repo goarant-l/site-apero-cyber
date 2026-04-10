@@ -1,9 +1,9 @@
 <?php
 // Connexion à la base de données
-$host     = 'localhost:8889';
+$host     = 'localhost';
 $dbname   = 'site-apero';
-$username = 'root';
-$password = 'root';
+$username = 'myroot';
+$password = 'root123*';
 
 try {
     $pdo = new PDO(
