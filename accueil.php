@@ -20,7 +20,7 @@
     <h2 style="border-bottom:3px solid #F4A424;padding-bottom:.4rem;">Nos produits</h2>
 
     <?php
-    $requeteSQL = "SELECT numProduit, nomProduit, descriptif, prixUnitaire, nomImage FROM produit";
+    $requeteSQL = "SELECT numProduit, nomProduit, descriptif, prixUnitaire, nomImage FROM produit ORDER BY idCategorie";
     $reponse = $pdo->query($requeteSQL);
     $liste_produit = $reponse->fetchAll(PDO::FETCH_ASSOC);
     ?>
