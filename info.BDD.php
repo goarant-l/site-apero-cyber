@@ -1,7 +1,7 @@
 <?php
 // Connexion à la base de données
 $host     = 'localhost:8889';
-$dbname   = 'site-marchand';
+$dbname   = 'site-apero';
 $username = 'root';
 $password = 'root';
 
