@@ -7,7 +7,9 @@
   <title>Apér'o — L'élégance sans la prétention</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -28,60 +30,61 @@ $pageActive = $_GET['page'] ?? 'accueil';
 
 <body>
 
-<nav class="navbar-apero">
-  <span class="brand">Apér'o</span>
+  <nav class="navbar-apero">
+    <span class="brand">Apér'o</span>
 
-  <div class="nav-links">
-    <a href="index.php?page=accueil">
-      <button class="btn-nav <?= $pageActive === 'accueil' ? 'active' : '' ?>">
-        <i class="bi bi-house"></i> Accueil
-      </button>
-    </a>
-    <a href="index.php?page=apropos">
-      <button class="btn-nav <?= $pageActive === 'apropos' ? 'active' : '' ?>">
-        <i class="bi bi-info-circle"></i> À propos
-      </button>
-    </a>
-    <a href="index.php?page=contact">
-      <button class="btn-nav <?= $pageActive === 'contact' ? 'active' : '' ?>">
-        <i class="bi bi-envelope"></i> Contact
-      </button>
-    </a>
-
-        <?php if ($connecte): ?>
-      <a href="index.php?page=admin">
-        <button class="btn-nav <?= $pageActive === 'admin' ? 'active' : '' ?>">
-          <i class="bi bi-gear"></i> Administration
+    <div class="nav-links">
+      <a href="index.php?page=accueil">
+        <button class="btn-nav <?= $pageActive === 'accueil' ? 'active' : '' ?>">
+          <i class="bi bi-house"></i> Accueil
         </button>
       </a>
-    <?php endif; ?>
+      <a href="index.php?page=apropos">
+        <button class="btn-nav <?= $pageActive === 'apropos' ? 'active' : '' ?>">
+          <i class="bi bi-info-circle"></i> À propos
+        </button>
+      </a>
+      <a href="index.php?page=contact">
+        <button class="btn-nav <?= $pageActive === 'contact' ? 'active' : '' ?>">
+          <i class="bi bi-envelope"></i> Contact
+        </button>
+      </a>
 
-    <?php if ($clientConnecte): ?>
+      <?php if ($connecte): ?>
+        <a href="index.php?page=admin">
+          <button class="btn-nav <?= $pageActive === 'admin' ? 'active' : '' ?>">
+            <i class="bi bi-gear"></i> Administration
+          </button>
+        </a>
+      <?php endif; ?>
+
+      <!-- Le bouton du panier est désormais toujours visible -->
       <a href="index.php?page=detail_panier">
         <button class="btn-nav <?= $pageActive === 'detail_panier' ? 'active' : '' ?>">
           <i class="bi bi-cart3"></i> Mon panier
         </button>
       </a>
-      <a href="index.php?page=historique_commandes">
-        <button class="btn-nav <?= $pageActive === 'historique_commandes' ? 'active' : '' ?>">
-          <i class="bi bi-box-seam"></i> Mes commandes
-        </button>
-      </a>
-    <?php endif; ?>
 
-    <?php if ($connecte || $clientConnecte): ?>
-      <form action="deconnexion.php" method="post" style="margin:0;">
-        <button type="submit" class="btn-nav">
-          <i class="bi bi-box-arrow-right"></i> Déconnexion
-        </button>
-      </form>
-    <?php else: ?>
-      <a href="index.php?page=connexion_choix">
-        <button class="btn-nav">
-          <i class="bi bi-person"></i> Connexion
-        </button>
-      </a>
-    <?php endif; ?>
+      <?php if ($clientConnecte): ?>
+        <a href="index.php?page=historique_commandes">
+          <button class="btn-nav <?= $pageActive === 'historique_commandes' ? 'active' : '' ?>">
+            <i class="bi bi-box-seam"></i> Mes commandes
+          </button>
+        </a>
+      <?php endif; ?>
 
-  </div>
-</nav>
+      <?php if ($connecte || $clientConnecte): ?>
+        <form action="deconnexion.php" method="post" style="margin:0;">
+          <button type="submit" class="btn-nav">
+            <i class="bi bi-box-arrow-right"></i> Déconnexion
+          </button>
+        </form>
+      <?php else: ?>
+        <a href="index.php?page=connexion_choix">
+          <button class="btn-nav">
+            <i class="bi bi-person"></i> Connexion
+          </button>
+        </a>
+      <?php endif; ?>
+    </div>
+  </nav>
