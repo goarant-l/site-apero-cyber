@@ -48,10 +48,23 @@ $pageActive = $_GET['page'] ?? 'accueil';
       </button>
     </a>
 
-    <?php if ($connecte): ?>
+        <?php if ($connecte): ?>
       <a href="index.php?page=admin">
         <button class="btn-nav <?= $pageActive === 'admin' ? 'active' : '' ?>">
           <i class="bi bi-gear"></i> Administration
+        </button>
+      </a>
+    <?php endif; ?>
+
+    <?php if ($clientConnecte): ?>
+      <a href="index.php?page=detail_panier">
+        <button class="btn-nav <?= $pageActive === 'detail_panier' ? 'active' : '' ?>">
+          <i class="bi bi-cart3"></i> Mon panier
+        </button>
+      </a>
+      <a href="index.php?page=historique_commandes">
+        <button class="btn-nav <?= $pageActive === 'historique_commandes' ? 'active' : '' ?>">
+          <i class="bi bi-box-seam"></i> Mes commandes
         </button>
       </a>
     <?php endif; ?>
@@ -69,5 +82,6 @@ $pageActive = $_GET['page'] ?? 'accueil';
         </button>
       </a>
     <?php endif; ?>
+
   </div>
 </nav>
