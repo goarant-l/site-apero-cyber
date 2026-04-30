@@ -21,7 +21,7 @@
   <h2>Notre histoire</h2>
   <p>
     Tout commence à Pont-de-Buis, au cœur de la vallée de la Douffine.
-    Trois amis — un brasseur, un charcutier et un affineur — se retrouvent un soir autour d'une table.
+    Trois amis - un brasseur, un charcutier et un affineur - se retrouvent un soir autour d'une table.
     De cette rencontre naît une idée : créer une bière pensée pour accompagner l'apéritif.
   </p>
   <p>Une bière qui ne domine pas, mais qui dialogue. Une bière qui sublime le fromage, la charcuterie et les moments partagés.</p>
@@ -62,15 +62,15 @@
     </div>
     <div class="member">
       <h3>Lorène Goarant</h3>
-      <p>Responsable marketing — Image de marque et communication</p>
+      <p>Responsable marketing - Image de marque et communication</p>
     </div>
   </div>
 
   <h2>Nos engagements</h2>
   <ul class="liste-apero">
-    <li>🌾 Produits locaux et circuits courts</li>
-    <li>🤝 Partenariats avec artisans régionaux</li>
-    <li>✅ Qualité et authenticité avant tout</li>
+    <li>Produits locaux et circuits courts</li>
+    <li>Partenariats avec artisans régionaux</li>
+    <li>Qualité et authenticité avant tout</li>
   </ul>
 
   <h2>Où nous trouver</h2>

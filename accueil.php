@@ -28,7 +28,7 @@
     <div class="products-grid">
       <?php foreach ($liste_produit as $produit): ?>
         <div class="card-produit">
-          <img src="/images/<?php echo htmlspecialchars($produit['nomImage']); ?>"
+          <img src="/image/<?php echo htmlspecialchars($produit['nomImage']); ?>"
             alt="<?php echo htmlspecialchars($produit['nomProduit']); ?>">
           <div class="card-body">
             <h3 class="card-title"><?php echo htmlspecialchars($produit['nomProduit']); ?></h3>
