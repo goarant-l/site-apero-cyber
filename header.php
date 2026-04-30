@@ -76,7 +76,7 @@ $pageActive = $_GET['page'] ?? 'accueil';
       <?php if ($connecte || $clientConnecte): ?>
         <form action="deconnexion.php" method="post" style="margin:0;">
           <button type="submit" class="btn-nav">
-            <i class="bi bi-box-arrow-right"></i> Déconnexion
+            <i class="bi bi-box-arrow-right"></i> Déconnexion (<?php echo $_SESSION["client_prenom"]?>)
           </button>
         </form>
       <?php else: ?>
