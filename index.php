@@ -18,7 +18,10 @@ $pages_autorisees = [
    'detail_produit',
    'ajout_panier',
    'details_panier',
-   'historique_commande'         // NOUVEAU : Page d'affichage du panier (pour plus tard)
+   'historique_commande',
+   'suppression_panier',
+   'detail_panier',
+   'valider_panier'        // NOUVEAU : Page d'affichage du panier (pour plus tard)
 ];
 
 $page = isset($_GET['page']) && in_array($_GET['page'], $pages_autorisees)

@@ -59,15 +59,15 @@ $pageActive = $_GET['page'] ?? 'accueil';
       <?php endif; ?>
 
       <!-- Le bouton du panier est désormais toujours visible -->
-      <a href="index.php?page=detail_panier">
-        <button class="btn-nav <?= $pageActive === 'detail_panier' ? 'active' : '' ?>">
+      <a href="index.php?page=details_panier">
+        <button class="btn-nav <?= $pageActive === 'details_panier' ? 'active' : '' ?>">
           <i class="bi bi-cart3"></i> Mon panier
         </button>
       </a>
 
       <?php if ($clientConnecte): ?>
-        <a href="index.php?page=historique_commandes">
-          <button class="btn-nav <?= $pageActive === 'historique_commandes' ? 'active' : '' ?>">
+        <a href="index.php?page=historique_commande">
+          <button class="btn-nav <?= $pageActive === 'historique_commande' ? 'active' : '' ?>">
             <i class="bi bi-box-seam"></i> Mes commandes
           </button>
         </a>

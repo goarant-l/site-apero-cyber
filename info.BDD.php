@@ -1,9 +1,9 @@
 <?php
 // Connexion à la base de données
-$host     = 'localhost';
+$host     = 'localhost:8889'; // <-- Ajout du port 8889
 $dbname   = 'site-apero';
-$username = 'myroot';
-$password = 'root123*';
+$username = 'root';
+$password = 'root';           // <-- Sur MAMP, le mot de passe est 'root'
 
 try {
     $pdo = new PDO(
