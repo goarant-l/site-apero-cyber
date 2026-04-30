@@ -16,7 +16,8 @@ $pages_autorisees = [
    'ajout_panier_exe',     // NOUVEAU : Action ajout au panier
    'detail_panier',
    'detail_produit',
-   'ajout_panier'         // NOUVEAU : Page d'affichage du panier (pour plus tard)
+   'ajout_panier',
+   'details_panier'         // NOUVEAU : Page d'affichage du panier (pour plus tard)
 ];
 
 $page = isset($_GET['page']) && in_array($_GET['page'], $pages_autorisees)
