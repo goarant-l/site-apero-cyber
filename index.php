@@ -11,7 +11,12 @@ $pages_autorisees = [
    'connexion_client',     // Client : formulaire login
    'connexion_client_exe', // Client : traitement login
    'inscription_client',   // Client : formulaire inscription
-   'inscription_client_exe'// Client : traitement inscription
+   'inscription_client_exe',// Client : traitement inscription
+   'detail_produit',       // NOUVEAU : Page de fiche produit
+   'ajout_panier_exe',     // NOUVEAU : Action ajout au panier
+   'detail_panier',
+   'detail_produit',
+   'ajout_panier'         // NOUVEAU : Page d'affichage du panier (pour plus tard)
 ];
 
 $page = isset($_GET['page']) && in_array($_GET['page'], $pages_autorisees)
