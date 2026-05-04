@@ -50,7 +50,7 @@ $pageActive = $_GET['page'] ?? 'accueil';
   <nav class="navbar-apero">
     <!-- Intégration du logo ici -->
     <a href="index.php?page=accueil" class="brand">
-      <img src="./image/logo" alt="Logo Apér'o" class="brand-logo">
+      <img src="./image/logo.png" alt="Logo Apér'o" class="brand-logo">
       <span>Apér'o</span>
     </a>
 
