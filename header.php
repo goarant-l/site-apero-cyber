@@ -13,6 +13,23 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <style>
+    /* Petit ajustement pour que le logo soit bien dimensionné */
+    .brand-logo {
+      height: 50px;
+      /* À ajuster selon tes préférences */
+      width: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
 </head>
 
 <?php
@@ -31,7 +48,11 @@ $pageActive = $_GET['page'] ?? 'accueil';
 <body>
 
   <nav class="navbar-apero">
-    <span class="brand">Apér'o</span>
+    <!-- Intégration du logo ici -->
+    <a href="index.php?page=accueil" class="brand">
+      <img src="logo.png" alt="Logo Apér'o" class="brand-logo">
+      <span>Apér'o</span>
+    </a>
 
     <div class="nav-links">
       <a href="index.php?page=accueil">
@@ -76,7 +97,7 @@ $pageActive = $_GET['page'] ?? 'accueil';
       <?php if ($connecte || $clientConnecte): ?>
         <form action="deconnexion.php" method="post" style="margin:0;">
           <button type="submit" class="btn-nav">
-            <i class="bi bi-box-arrow-right"></i> Déconnexion (<?php echo $_SESSION["client_prenom"]?>)
+            <i class="bi bi-box-arrow-right"></i> Déconnexion (<?php echo $_SESSION["client_prenom"] ?>)
           </button>
         </form>
       <?php else: ?>
